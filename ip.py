@@ -18,7 +18,7 @@ while 1:
 while(len(comIn) > x):
     if(comIn[x].isdigit() or comIn[x] == '.'):#moves all the digits and periods to a the current possible IP
         curIP = curIP + comIn[x]
-    elif(len(curIP) > 0 and curIP != '10.0.0.1' and (curIP[0] == '1' and curIP[1] == '0')):#makes sure that the digit is an IP and isn't the routers IP
+    elif(len(curIP) > 0 and curIP != '10.0.0.1' and curIP.startswith('10.0.0.'):#makes sure that the digit is an IP and isn't the routers IP
         IPlist.append(curIP)
         curIP = ''
         numberOfIPs = numberOfIPs + 1
